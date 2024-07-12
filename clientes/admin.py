@@ -4,7 +4,35 @@ from .models import Empregado, Telefone, CPF, Departamento
 
 # Register your models here.
 
-admin.site.register(Empregado)
+
+class EmpregadoAdmin(admin.ModelAdmin):
+    fieldsets = (
+        (None, {
+            "fields": (
+                "nome", "idade"
+            )
+        }),
+
+        ("Wage", {
+            "fields": (
+                "salario",
+            )
+        }),
+
+        ("Email", {
+            "fields": (
+                "email",      
+            )
+        }),
+    )
+    
+    list_display = ["id", "nome", "email"]
+    list_filter = ["salario", "idade", "departamento"]
+    search_fields = ["salario", "departamento__nome"]
+
+
+
+admin.site.register(Empregado, EmpregadoAdmin)
 admin.site.register(Telefone)
 admin.site.register(CPF)
 admin.site.register(Departamento)

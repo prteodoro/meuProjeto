@@ -21,7 +21,7 @@ class CPF(models.Model):
 class Empregado(models.Model):
     nome = models.CharField(max_length=100, null=False)
     endereco = models.CharField(max_length=200, blank=False, null=False)
-    Salario = models.DecimalField(max_digits=10, decimal_places=2)
+    salario = models.DecimalField(max_digits=10, decimal_places=2)
     idade = models.IntegerField()
     email = models.EmailField()
     cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, null=True, blank=True)
