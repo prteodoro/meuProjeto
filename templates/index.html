@@ -4,7 +4,7 @@
 
 {% block main %}
 
-    <h1>Olá mundo!</h1>
+    <h1 class="programe_facil">Olá mundo!</h1>
 
     <ul>
         <li>item</li>
@@ -37,7 +37,7 @@
         {% endfor %}
     </ul>
 
-    <button class="btn btn-info">Clique aqui</button>
+    <button class="btn btn-info" onclick="olaMundo()">Clique aqui</button>
 
     {% include "footer.html" with pnome=nome %}
 {% endblock  %}
