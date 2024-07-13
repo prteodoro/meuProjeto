@@ -9,19 +9,19 @@ class EmpregadoAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                "nome", "idade"
+                "nome", "idade", "endereco"
             )
         }),
 
         ("Wage", {
             "fields": (
-                "salario",
+                "salario", "cpf", "departamento"
             )
         }),
 
         ("Email", {
             "fields": (
-                "email",      
+                "email", "foto"   
             )
         }),
     )
